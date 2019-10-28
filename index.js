@@ -13,6 +13,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/cats', { useNewUrlParser: true, useUnifiedTopology: true });
+
 // parse the body and at it to the request body
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
